@@ -1,5 +1,5 @@
-import sys 
 import os
+import sys
 import yaml
 import flask
 
@@ -14,7 +14,7 @@ def index():
 
         
 CONFIG = {"API_KEY": "771df488714111d39138eb60df756e6b"}
-class Person(object):
+class Person():
     def __init__(self, name):
         self.name = name
 
@@ -31,7 +31,7 @@ def fetch_website(urllib_version, url):
     try: 
         http = urllib.PoolManager()
         r = http.request('GET', url)
-    except:
+    except Exception:
         print('Exception')
 
 
@@ -44,6 +44,7 @@ def authenticate(password):
     # Assert that the password is correct
     assert password == "Iloveyou", "Invalid password!"
     print("Successfully authenticated!")
+
 
 if __name__ == '__main__':
     print("Vulnerabilities:")
